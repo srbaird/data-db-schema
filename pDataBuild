@@ -1,3 +1,22 @@
 CREATE SCHEMA IF NOT EXISTS `pData` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
+CREATE TABLE IF NOT EXISTS `pData`.`equities` (
+  `dsCode` VARCHAR(45) NOT NULL,
+  `dsDescription` VARCHAR(255) NULL,
+  `tStamp` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`dsCode`))
+ENGINE = InnoDB
+COMMENT = 'Equities meta data table';
+
+CREATE TABLE IF NOT EXISTS `pData`.`equityPrices` (
+  `dsCode` VARCHAR(45) NOT NULL,
+  `valueDate` DATETIME NOT NULL,
+  `openPrice` FLOAT NULL,
+  `highPrice` FLOAT NULL,
+  `lowPrice` FLOAT NULL,
+  `closePrice` FLOAT NULL,
+  `volume` FLOAT NULL,
+  `tStamp` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`dsCode`, `valueDate`))
+ENGINE = InnoDB;
  
