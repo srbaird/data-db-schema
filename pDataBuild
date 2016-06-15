@@ -34,3 +34,12 @@ CREATE TABLE IF NOT EXISTS `pData`.`rateValues` (
   `tStamp` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`dsCode`, `valueDate`))
 ENGINE = InnoDB;
+
+
+CREATE TABLE IF NOT EXISTS `pData`.`currencyValues` (
+  `dsCode` VARCHAR(45) NOT NULL,
+  `valueDate` DATETIME NOT NULL,
+  `value` FLOAT NOT NULL,
+  `tStamp` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`dsCode`, `valueDate`))
+ENGINE = InnoDB;
