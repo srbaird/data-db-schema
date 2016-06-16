@@ -35,6 +35,14 @@ CREATE TABLE IF NOT EXISTS `pData`.`rateValues` (
   PRIMARY KEY (`dsCode`, `valueDate`))
 ENGINE = InnoDB;
 
+CREATE TABLE `currencies` (
+  `dsCode` varchar(45) NOT NULL,
+  `ISOFrom` char(3) NOT NULL,
+  `ISOTo` char(3) NOT NULL,
+  `tStamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`dsCode`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 CREATE TABLE IF NOT EXISTS `pData`.`currencyValues` (
   `dsCode` VARCHAR(45) NOT NULL,
