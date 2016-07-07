@@ -75,5 +75,11 @@ CREATE TABLE `instrumentTypes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+CREATE TABLE `portfolioCodes` (
+  `portfolioCode` varchar(45) NOT NULL,
+  `portfolioDescription` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`portfolioCode`),
+  UNIQUE KEY `portfolioCode_UNIQUE` (`portfolioCode`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
