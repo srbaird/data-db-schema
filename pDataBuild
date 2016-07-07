@@ -91,12 +91,11 @@ CREATE TABLE `portfolioHolding` (
   `valueDate` datetime NOT NULL,
   `tStamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `portfolioCode_UNIQUE` (`portfolioCode`),
-  UNIQUE KEY `dsCode_UNIQUE` (`dsCode`),
-  UNIQUE KEY `valueDate_UNIQUE` (`valueDate`),
+  UNIQUE KEY `portfolioCode_UNIQUE` (`portfolioCode`,`dsCode`,`valueDate`),
   KEY `fk_instrument_type_idx` (`instrumentType`),
   CONSTRAINT `fk_instrument_type` FOREIGN KEY (`instrumentType`) REFERENCES `instrumentTypes` (`instrumentTypeId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_portfolio_code` FOREIGN KEY (`portfolioCode`) REFERENCES `portfolioCodes` (`portfolioCode`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
