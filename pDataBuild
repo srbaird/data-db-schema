@@ -82,4 +82,21 @@ CREATE TABLE `portfolioCodes` (
   UNIQUE KEY `portfolioCode_UNIQUE` (`portfolioCode`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `portfolioHolding` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `portfolioCode` varchar(45) NOT NULL,
+  `dsCode` varchar(45) NOT NULL,
+  `instrumentType` int(11) NOT NULL,
+  `value` double NOT NULL,
+  `valueDate` datetime NOT NULL,
+  `tStamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `portfolioCode_UNIQUE` (`portfolioCode`),
+  UNIQUE KEY `dsCode_UNIQUE` (`dsCode`),
+  UNIQUE KEY `valueDate_UNIQUE` (`valueDate`),
+  KEY `fk_instrument_type_idx` (`instrumentType`),
+  CONSTRAINT `fk_instrument_type` FOREIGN KEY (`instrumentType`) REFERENCES `instrumentTypes` (`instrumentTypeId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_portfolio_code` FOREIGN KEY (`portfolioCode`) REFERENCES `portfolioCodes` (`portfolioCode`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
