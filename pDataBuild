@@ -67,5 +67,13 @@ CREATE TABLE IF NOT EXISTS `pData`.`commodityValues` (
   PRIMARY KEY (`dsCode`, `valueDate`))
 ENGINE = InnoDB;
 
+CREATE TABLE `instrumentTypes` (
+  `instrumentTypeId` int(11) NOT NULL AUTO_INCREMENT,
+  `instrumentTypeDescription` varchar(45) NOT NULL,
+  PRIMARY KEY (`instrumentTypeId`),
+  UNIQUE KEY `instrumentTypeDescription_UNIQUE` (`instrumentTypeDescription`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 
 
