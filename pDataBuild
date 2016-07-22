@@ -97,6 +97,17 @@ CREATE TABLE `portfolioHoldings` (
   CONSTRAINT `fk_portfolio_code` FOREIGN KEY (`portfolioCode`) REFERENCES `portfolioCodes` (`portfolioCode`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
+CREATE TABLE `predictions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `portfolioCode` varchar(45) NOT NULL,
+  `valueDate` date NOT NULL,
+  `hValue` double NOT NULL,
+  `pValue` double NOT NULL,
+  `valuation` double NOT NULL,
+  `tStamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
 
 
 
