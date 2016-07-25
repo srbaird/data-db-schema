@@ -99,15 +99,13 @@ CREATE TABLE `portfolioHoldings` (
 
 CREATE TABLE `predictions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `portfolioCode` varchar(45) NOT NULL,
+  `portfolioCode` varchar(254) NOT NULL,
   `valueDate` date NOT NULL,
+  `eClass` varchar(255) NOT NULL,
   `hValue` double NOT NULL,
   `pValue` double NOT NULL,
   `valuation` double NOT NULL,
   `tStamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-
-
-
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
